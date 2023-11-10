@@ -1,4 +1,5 @@
 import { useMutation } from 'react-query';
+import { AxiosError } from 'axios';
 import { axios } from '@/lib/axios';
 import { Auth } from '@/context/UserContext';
 
@@ -14,5 +15,5 @@ const fetchSignup = async (body: SignupBody): Promise<Auth> => {
 };
 
 export const useSignupMutation = (config = {}) => {
-  return useMutation((body: SignupBody) => fetchSignup(body), config);
+  return useMutation<Auth, AxiosError, SignupBody>(fetchSignup, config);
 };

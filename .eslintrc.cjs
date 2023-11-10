@@ -27,5 +27,7 @@ module.exports = {
     'react/prop-types': 'off',
     'no-console': 'warn',
     'prettier/prettier': 'warn',
+    '@next/next/no-img-element': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
   },
 };
